@@ -1,30 +1,32 @@
 import React from "react"
-import Nav from "./routing/Nav"
-import About from "./routing/About"
-import Shop from "./routing/Shop"
-
-import "./App.css"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import Navbar from 'react-bootstrap/Navbar'
+import Cover from './bootstrap/Cover'
 
 function App() {
     return (
-        <Router>
-            <div>
-                <Nav />
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/about" component={About} />
-                    <Route path="/shop" component={Shop} />
-                </Switch>
-            </div>
-        </Router>
+        <div>
+        <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
+            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="#link">Link</Nav.Link>
+                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                    </NavDropdown>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+        <Cover />
+        </div>
     )
 }
-
-const Home = () => (
-    <div>
-        <h1>Home Page</h1>
-    </div>
-);
 
 export default App
