@@ -1,10 +1,10 @@
 import React from "react"
-import Cover from "./components/Cover"
+import DS from "./components/DS"
 
 function App() {
     return (
         <div>
-            <Cover />
+            <DS />
         </div>
     )
 }
