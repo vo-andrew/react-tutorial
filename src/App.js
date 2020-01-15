@@ -1,10 +1,16 @@
 import React from "react"
-import DS from "./components/DS"
+import Calculator from "./components/Calculator"
 
 function App() {
+    const style = {
+        display: "flex",
+        justifyContent: "center",
+        alignCotent: "center",
+        height: "100vh"
+    }
     return (
-        <div>
-            <DS />
+        <div style={style}>
+            <Calculator />
         </div>
     )
 }
